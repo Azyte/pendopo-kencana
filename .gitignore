@@ -1,0 +1,9 @@
+# Design and audit tooling, not part of the site
+.taste-skill/
+anti-slop/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.vercel
