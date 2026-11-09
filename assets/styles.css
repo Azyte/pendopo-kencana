@@ -391,6 +391,19 @@ h1, h2, h3 {
   font-size: var(--step-small);
 }
 
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  font-size: var(--step-small);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  line-height: 1.2;
+}
+
 .nav-controls {
   display: flex;
   align-items: center;
@@ -1043,14 +1056,18 @@ h1, h2, h3 {
 /* 7. Contact — Address in display rows */
 .contact-intro-grid {
   margin-bottom: 2rem;
-  align-items: end;
+  align-items: stretch;
 }
 
 .contact-head-col {
   grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
 }
 
-.contact-map-col {
+.contact-address-col {
   grid-column: 1 / -1;
 }
 
@@ -1058,9 +1075,46 @@ h1, h2, h3 {
   .contact-head-col {
     grid-column: 1 / 6;
   }
-  .contact-map-col {
+  .contact-address-col {
     grid-column: 7 / 13;
   }
+}
+
+.contact-card {
+  background-color: var(--field-1);
+  color: var(--field-1-ink);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.contact-address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-place-name {
+  font-family: var(--font-display);
+  font-size: var(--step-head);
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.contact-card .muted-text {
+  color: var(--field-1-ink);
+}
+
+.directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
 }
 
 .display-rows {
@@ -1208,7 +1262,7 @@ h1, h2, h3 {
 .credits {
   font-size: var(--step-body);
   line-height: 1.55;
-  max-width: 90ch;
+  max-width: 65ch;
 }
 
 .credits a {

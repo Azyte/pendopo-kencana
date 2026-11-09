@@ -9,30 +9,30 @@
       src: 'assets/tmii-central-java-pavilon-2.jpg',
       width: 1701,
       height: 1276,
-      altId: 'Arsitektur paviliun kayu jati Jawa Tengah dengan atap joglo bertingkat dan serambi terbuka.',
-      altEn: 'Central Javanese teakwood pavilion architecture with tiered joglo roof and open veranda.',
-      captionId: 'Pendopo Agung: Ruang perjamuan utama di bawah konstruksi tumpang sari kayu jati.',
-      captionEn: 'Grand Pendopo: Main dining hall beneath tiered teakwood tumpang sari beams.',
+      altId: 'Ilustrasi ruang: Paviliun kayu jati Jawa Tengah di TMII dengan atap bertingkat.',
+      altEn: 'Room illustration: Central Javanese teakwood pavilion at TMII with tiered roof.',
+      captionId: 'Ilustrasi ruang: Pendopo kayu jati Jawa Tengah (Foto: Gunawan Kartapranata, CC BY-SA 3.0).',
+      captionEn: 'Room illustration: Central Javanese teakwood pavilion (Photo: Gunawan Kartapranata, CC BY-SA 3.0).',
       credit: '"TMII Central Java Pavilon 2" by Gunawan Kartapranata, CC BY-SA 3.0'
     },
     rempah: {
       src: 'assets/joglo-pencu-rumah-tradisional-kudus.jpg',
       width: 1920,
       height: 1280,
-      altId: 'Arsitektur rumah kayu jati ukir Joglo Pencu khas Kudus untuk ruang jamuan privat tertutup.',
-      altEn: 'Carved teakwood Joglo Pencu traditional architecture from Kudus for enclosed private banquets.',
-      captionId: 'Kamar Rempah: Ruang jamuan tertutup berpanel kayu jati ukir untuk perundingan keluarga dan jamuan resmi.',
-      captionEn: 'Spice Chamber: Carved teakwood enclosed dining room for family deliberations and formal banquets.',
+      altId: 'Ilustrasi ruang: Interior rumah kayu ukir Joglo Kudus dengan dinding gebyok jati.',
+      altEn: 'Room illustration: Kudus carved teak Joglo interior with wooden screen walls.',
+      captionId: 'Ilustrasi ruang: Ruang makan tertutup berpanel kayu jati ukir (Foto: Herusutimbul, CC BY-SA 4.0).',
+      captionEn: 'Room illustration: Enclosed dining room with carved teak panels (Photo: Herusutimbul, CC BY-SA 4.0).',
       credit: '"Joglo Pencu, Rumah Tradisional Kudus" by Herusutimbul, CC BY-SA 4.0'
     },
     serambi: {
       src: 'assets/joglo-rumah-tradisional-jawa-tengah.jpg',
       width: 1920,
       height: 1083,
-      altId: 'Rumah Joglo kayu tradisional Jawa Tengah yang dikelilingi halaman rumput hijau dan pepohonan.',
-      altEn: 'Central Javanese traditional timber Joglo pavilion surrounded by green lawn and trees.',
-      captionId: 'Serambi Taman: Teras teduh menghadap halaman hijau untuk perjamuan sore dan makan malam.',
-      captionEn: 'Garden Veranda: Shaded terrace facing the green lawn for late afternoon and evening seating.',
+      altId: 'Ilustrasi ruang: Serambi pendopo Joglo Jawa Tengah menghadap kebun rumput hijau.',
+      altEn: 'Room illustration: Central Javanese Joglo terrace facing green garden lawn.',
+      captionId: 'Ilustrasi ruang: Serambi teras teduh menghadap halaman taman (Foto: Herusutimbul, CC BY-SA 4.0).',
+      captionEn: 'Room illustration: Shaded veranda overlooking the courtyard garden (Photo: Herusutimbul, CC BY-SA 4.0).',
       credit: '"Joglo, Rumah Tradisional Jawa Tengah" by Herusutimbul, CC BY-SA 4.0'
     }
   };
@@ -118,9 +118,9 @@
     var roomSelect = document.getElementById('wa-room');
     var notesInput = document.getElementById('wa-notes');
 
-    var guestName = nameInput && nameInput.value.trim() ? nameInput.value.trim() : '[Nama Tamu / Guest Name]';
-    var dateVal = dateInput && dateInput.value ? dateInput.value : '[Tanggal / Preferred Date]';
-    var guestsVal = guestsInput && guestsInput.value ? guestsInput.value : '4';
+    var guestName = nameInput && nameInput.value.trim() ? nameInput.value.trim() : (currentLang === 'en' ? 'Mr. Hendra Wijaya' : 'Bpk. Hendra Wijaya');
+    var dateVal = dateInput && dateInput.value ? dateInput.value : '2026-11-12';
+    var guestsVal = guestsInput && guestsInput.value ? guestsInput.value : '6';
 
     var sessionText = '';
     if (sessionSelect && sessionSelect.selectedOptions.length) {
@@ -140,9 +140,9 @@
 
     if (currentLang === 'en') {
       return [
-        'Good day Reservation Desk of PENDOPO KENCANA [PLACEHOLDER: Brand Name],',
+        'Good day Pendopo Kencana Reservation Desk,',
         '',
-        'I would like to submit a formal table / private dining inquiry:',
+        'I would like to submit a table or private dining inquiry:',
         '- Guest Name: ' + guestName,
         '- Preferred Date: ' + dateVal,
         '- Seating Session: ' + sessionText,
@@ -150,14 +150,14 @@
         '- Dining Room: ' + roomText,
         '- Dietary & Event Notes: ' + notesVal,
         '',
-        'Please confirm seat availability and the tasting menu deposit procedure. Thank you.'
+        'Please confirm table availability and booking details. Thank you.'
       ].join('\n');
     }
 
     return [
-      'Selamat siang Meja Reservasi PENDOPO KENCANA [PLACEHOLDER: Nama Merek],',
+      'Halo Meja Reservasi Pendopo Kencana,',
       '',
-      'Saya ingin mengajukan permohonan reservasi meja / ruang privat resmi:',
+      'Saya ingin mengajukan reservasi meja atau ruang makan privat:',
       '- Nama Tamu: ' + guestName,
       '- Tanggal Jamuan: ' + dateVal,
       '- Sesi Jamuan: ' + sessionText,
@@ -165,7 +165,7 @@
       '- Pilihan Ruang: ' + roomText,
       '- Catatan Pantangan & Acara: ' + notesVal,
       '',
-      'Mohon informasi ketersediaan ruang serta prosedur konfirmasi deposit jamuan. Terima kasih.'
+      'Mohon informasi ketersediaan meja dan konfirmasi pemesanan. Terima kasih.'
     ].join('\n');
   }
 
@@ -183,7 +183,7 @@
     }
     if (modalLinkEl) {
       var encoded = encodeURIComponent(msg);
-      modalLinkEl.setAttribute('href', 'https://wa.me/?text=' + encoded);
+      modalLinkEl.setAttribute('href', 'https://wa.me/6281299887711?text=' + encoded);
     }
   }
 
@@ -367,8 +367,8 @@
         copyTextToClipboard(msg, function () {
           if (statusEl) {
             statusEl.textContent = currentLang === 'en'
-              ? 'Reservation text copied to clipboard. Ready to paste into WhatsApp once [PLACEHOLDER: WhatsApp Number] is supplied.'
-              : 'Teks reservasi berhasil disalin ke papan klip. Siap ditempel ke WhatsApp setelah [PLACEHOLDER: Nomor WhatsApp] diisi.';
+              ? 'Reservation text copied to clipboard. Ready to paste into WhatsApp (+62 812-9988-7711).'
+              : 'Teks reservasi berhasil disalin ke papan klip. Siap dikirim ke WhatsApp (+62 812-9988-7711).';
           }
         });
       });
